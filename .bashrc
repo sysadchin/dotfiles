@@ -38,7 +38,11 @@ case "$TERM" in
     ;;
 esac
 
-PS1="${YELLOW}\D{%m%d}${RESET}|${LIGHT_RED}\D{%H:%M.%S}${RESET}|${CYAN}[\u]${RESET}:${LIGHT_VIOLET}\w${RESET}]$ "
+if [ -n "$TMUX" ]; then
+    PS1="${CYAN}\D{%m%d}${RESET}|${YELLOW}\D{%H:%M.%S}${RESET}|${GREEN}[\u]${RESET}:${GREEN}\w${RESET}]$ "
+else
+    PS1="${YELLOW}\D{%m%d}${RESET}|${LIGHT_RED}\D{%H:%M.%S}${RESET}|${CYAN}[\u]${RESET}:${LIGHT_VIOLET}\w${RESET}]$ "
+fi
 _archivedps1=$PS1
 
 # prints path to git directory
@@ -290,7 +294,6 @@ __git_prompt() {
         branch="${YELLOW}${branch}${RESET}"
 
         # update PS1
-        PS1="${CYAN}[\u]${RESET}${LIGHT_VIOLET}[\w]${RESET} ${branch}${extras} $ "
     else
         PS1=${_archivedps1}
     fi
