@@ -1,0 +1,13 @@
+:quit
+exit
+:source .wmii/wmiirc
+quit
+                              
+2to3-2.7
+terminator
+uxterm
+xterm
+libreoffice
+libreoffice --calc
+skype
+firefox

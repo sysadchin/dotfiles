@@ -1,0 +1,8 @@
+showkeys
+exec termiantor
+welcome
+exec wmii
+firefox
+libreoffice
+exec
+quit
