@@ -2,8 +2,11 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 repo_base="https://raw.githubusercontent.com/sysadchin/dotfiles/master/ec2"
 user_files=('.vimrc' '.bashrc' '.bash_profile')
-user='ec2-user'
+users=('ec2-user')
 
-for i in "${user_files[@]}"; do 
-	wget -O ~$user/$i $repo_base/$i
+for user in "${users[@]}; do 
+	user_homedir=$(grep $user /etc/passwd | awk -F ':' '{print $4}')
+	for i in "${user_files[@]}"; do 
+		wget -O $user_homedir/$i $repo_base/$i
+	done
 done
