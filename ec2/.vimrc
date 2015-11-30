@@ -1,0 +1,20 @@
+colorscheme koehler
+syntax on
+set expandtab
+set shiftwidth=2
+set softtabstop=4
+"set autoindent
+set ts=4
+set sw=4
+set number
+set backspace=indent,eol,start
+set history=50
+set ruler
+set cursorline
+set incsearch
+set laststatus=2
+set linespace=0
+set modeline
+set expandtab
+set autoindent
+hi SpecialKey ctermfg=DarkGrey

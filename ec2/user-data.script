@@ -1,0 +1,9 @@
+#!/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+repo_base="https://raw.githubusercontent.com/sysadchin/dotfiles/master/ec2"
+user_files=('.vimrc' '.bashrc' '.bash_profile')
+user='ec2-user'
+
+for i in "${user_files[@]}"; do 
+	wget -O ~$user/$i $repo_base/$i
+done
