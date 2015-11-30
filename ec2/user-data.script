@@ -5,7 +5,7 @@ user_files=('.vimrc' '.bashrc' '.bash_profile')
 users=('ec2-user')
 
 for user in "${users[@]}"; do 
-	user_homedir=$(grep $user /etc/passwd | awk -F ':' '{print $4}')
+	user_homedir=$(grep $user /etc/passwd | awk -F ':' '{print $6}')
 	for i in "${user_files[@]}"; do 
 		wget -O $user_homedir/$i $repo_base/$i
 	done
